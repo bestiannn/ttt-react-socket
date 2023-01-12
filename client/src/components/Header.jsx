@@ -2,10 +2,14 @@ import { TiArrowBack } from "react-icons/ti";
 import { AiOutlineClose } from "react-icons/ai";
 import { BsCircle } from "react-icons/bs";
 
-const Header = () => {
+const Header = ({ gameInfo, setGameInfo }) => {
+  const handleBack = () => {
+    setGameInfo((prev) => ({ ...prev, active: false }));
+  };
+
   return (
     <div className="flex justify-between">
-      <div className="">
+      <div onClick={handleBack} className="cursor-pointer">
         <TiArrowBack />
       </div>
       <div className="">X Turn</div>
